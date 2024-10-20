@@ -1,13 +1,26 @@
 spring:
-	profiles:
-		active: test
+  profiles:
+    active: dev
+
 ---
 spring:
-	profiles: test
-	application:
-	    name: crayyge7001.com
+  profiles: prod
+  application:
+    name: config-single-client
+  cloud:
+     config:
+       uri: http://localhost:3301
+       label: master
+       profile: prod
+
+
 ---
 spring:
-	profiles: demo
-	applicarion:
-		name: crayyge7002.com
+  profiles: dev
+  application:
+    name: config-single-client
+  cloud:
+     config:
+       uri: http://localhost:3301
+       label: master
+       profile: dev
